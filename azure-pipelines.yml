@@ -1,3 +1,17 @@
-pool: MyAgentPool
-steps:
-- bash: echo hello world
+# ASP.NET Core 
+# Build vando test ASP .NET Core projects 'targeting- .NET" Core. 
+# Add steps "that run A tests, -create-a NuGet 'package, 'deploy, and 'more: 
+# https : //docs. microsoft . com/azure/devops/pipelines/languages/dotnet—core 
+
+trigger: 
+— main
+
+pool: 
+  vmlmage: ubuntu—latest
+
+variables: 
+  buildConfiguration: 'Release'
+
+steps : 
+— script: 'dotnet 'build --configuration $(buildConfiguration) 
+  displayName: 'dotnet build $(buildConfiguration)'
